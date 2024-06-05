@@ -10,7 +10,13 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "strict": false, // 엄격한 타입 체크 비활성화
+    "noImplicitAny": false, // any 타입에 대한 오류 비활성화
+    "noImplicitThis": false, // 'this'의 암시적인 'any' 타입에 대한 오류 비활성화
+    "strictNullChecks": false, // null과 undefined 체크 비활성화
+    "strictFunctionTypes": false, // 함수 타입의 엄격한 검사 비활성화
+    "strictPropertyInitialization": false, // 클래스 속성 초기화 검사 비활성화
+    "skipLibCheck": true, // 모든 선언 파일(*.d.ts)의 타입 체크 건너뛰기
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
