@@ -126,7 +126,8 @@ export default function CampainDetailIntroduction() {
                     <div key={index} style={{ margin: '10px' }}>
                         <div
                             ref={inputRef}
-                            placeholder={`Input Box ${index + 1}`}
+                            // 이거 뭐여 !
+                            // placeholder={`Input Box ${index + 1}`}
                             // style={{ height: '300px' }}
                         >
                             {input[index].value}
