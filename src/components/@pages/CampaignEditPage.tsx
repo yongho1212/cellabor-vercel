@@ -5,7 +5,7 @@ import { editProfile } from '../../apis/user/editProfile';
 import { useNavigate, useOutletContext } from 'react-router-dom';
 import {
     useCampaignMutation,
-    usecampaignQueries,
+    useCampaignQueries,
     useCampaignDelete,
 } from '../../services/campaignQueries';
 import { UserType } from '../../types/infuser.types';

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import { Button } from '../@atoms';
 
 interface ScrollTextBoxDTO {
@@ -68,10 +68,18 @@ export default function CampainDetailIntroduction() {
         },
     ];
 
-    const inputRefs: React.RefObject<HTMLDivElement>[] = Array.from(
-        { length: input.length },
-        () => useRef(null)
-    );
+    // const inputRefs: React.RefObject<HTMLDivElement>[] = Array.from(
+    //     { length: input.length },
+    //     () => useRef(null)
+    // );
+
+    const [inputRefs, setInputRefs] = useState<React.RefObject<HTMLDivElement>[]>([]);
+
+    useEffect(() => {
+        // 컴포넌트가 마운트될 때 한 번만 실행되도록 합니다.
+        // input.length 길이의 배열을 생성하고 각 요소를 useRef로 초기화합니다.
+        setInputRefs(Array.from({ length: input.length }, () => React.createRef()));
+    }, [input.length]); // 의존성 배열에 input.length를 추가하여 input 배열의 길이가 변경될 때만 실행되도록 합니다.
 
     // 특정 input 요소로 스크롤하는 함수
     const scrollToInput = (index: number) => {

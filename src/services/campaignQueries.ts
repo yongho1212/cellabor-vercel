@@ -3,7 +3,7 @@ import { getCampaignDetail } from '../apis/campaign/getCampaignDetail';
 import { editCampaign } from '../apis/campaign/editCampaign';
 import { deleteCampaign } from '../apis/campaign/deleteCampaign';
 
-export const usecampaignQueries = (id?: string) => {
+export const useCampaignQueries = (id?: string) => {
     console.log('id', id);
     const { isLoading, isError, data, isSuccess } = useQuery({
         queryKey: ['campaign'],

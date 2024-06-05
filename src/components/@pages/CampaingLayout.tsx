@@ -4,7 +4,7 @@ import {getUserInfo} from '../../apis/user/getProfile';
 import firebase from 'firebase/compat';
 import {calculateAge} from '../../utils/getAge';
 import {Outlet, useParams} from 'react-router-dom';
-import {useCampaignMutation, usecampaignQueries} from '../../services/campaignQueries';
+import {useCampaignMutation, useCampaignQueries} from '../../services/campaignQueries';
 import {UserType} from '../../types/infuser.types';
 import Skeleton from '@mui/material/Skeleton';
 import FacebookLoginbutton from '../@molecule/FacebookCertificateButton';
@@ -19,7 +19,7 @@ type Props = {
 const CampaingLayout = (props: Props) => {
     const { id } = useParams<{ id?: string }>();
     const [imageUrl, setImageUrl] = useState('');
-    const {isLoading, isSuccess, isError, data} = usecampaignQueries(id!);
+    const {isLoading, isSuccess, isError, data} = useCampaignQueries(id!);
     const mutation = useCampaignMutation();
     const campaignData = data?.data;
     const fileInputRef = useRef<HTMLInputElement>(null);
