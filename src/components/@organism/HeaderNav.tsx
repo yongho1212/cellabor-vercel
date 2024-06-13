@@ -12,11 +12,16 @@ import {useRecoilState, useResetRecoilState} from 'recoil';
 import {useNavigate} from 'react-router-dom';
 import AccountMenu from '../@molecule/HeaderMenu';
 import Logo from '../../images/cellabor_logo.png';
+import { BsPersonCircle } from 'react-icons/bs';
+
+import {useResponsive} from '../../hooks/useResponsive';
 
 
 const HeaderNav = () => {
-
+    const navigate = useNavigate();
     const [isLoggedIn, _] = useRecoilState(loginState);
+    const { isDesktop, isTablet, isMobile } = useResponsive();
+
 
     return (
         <>
@@ -30,17 +35,17 @@ const HeaderNav = () => {
                     <NavArea>
                     {!isLoggedIn ?
                         <>
-                            {NAV_MENU.map((menu, index) => {
-                                return (
-                                    <Link to={menu.value} key={index}>{menu.key} </Link>
-                                );
-                            })}
+                        {isMobile ?
+                            <BsPersonCircle  size={25} onClick={() => navigate('/signin')} />
+                            :
+                            <div className={'flex border-2 rounded-md px-3 py-1'}>
+                                <Link to={'/signin'}>로그인 / 회원가입</Link>
+                            </div>
+                        }
                         </>
-                    :
+                        :
                         <>
-                            {/*<Link to={'/profile'}>Profile</Link>*/}
-                            {/*<SignOut />*/}
-                            <AccountMenu />
+                        <AccountMenu />
                         </>
                     }
                     </NavArea>
@@ -55,24 +60,34 @@ const HeaderNav = () => {
 export default HeaderNav;
 
 const HeaderNavContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  background-color: darkgrey;
-  height: 60px;
-  min-width: 767px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: darkgrey;
+    height: 60px;
+    
+    @media (max-width: 768px) { 
+    
+    }
 `;
 
 const HeaderContentsArea = styled.div`
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 768px) { 
+        
+    }
 `;
 
 const LogoArea = styled.div`
+    
 `;
 
 const NavArea = styled.div`
+
 `;
+
