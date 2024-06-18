@@ -9,7 +9,7 @@ import TextField from '@mui/material/TextField';
 import {searchUser} from '../../apis/user/searchUser';
 
 type Props = {
-    forwardFilter: (filter: { age: number[], sex: string[] }) => void,
+    forwardFilter: (filter: { name:string, age: number[], sex: string[], category: string[] }) => void,
 };
 
 function valuetext(value: number) {
@@ -23,6 +23,8 @@ const SearchbarWithFilter = ({forwardFilter}: Props) => {
     const [sex, setSex] = React.useState(() => ['male', 'female']);
     const [category, setCategory] = useState<string[]>([]);
     const data = {name, age, sex, category};
+
+    console.log(data);
 
     const handleSex = (
         event: React.MouseEvent<HTMLElement>,
@@ -120,7 +122,6 @@ export default SearchbarWithFilter;
 
 const SearchbarContainer = styled.div`
     width: 100%;
-    height: 100%;
     padding: 1rem;
     
     //border-radius: 8px;

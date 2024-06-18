@@ -11,6 +11,7 @@ import FacebookLoginbutton from '../@molecule/FacebookCertificateButton';
 import {FaRegEdit} from 'react-icons/fa';
 import imageUploadS3 from '../../utils/imageUploadS3';
 import useS3Upload from '../../hooks/useS3Upload';
+import RootContainer from '../@layouts/RootContainer';
 
 type Props = {
 
@@ -56,57 +57,59 @@ const ProfileLayout = (props: Props) => {
     }
 
     return (
-        <div className='flex justify-center' style={{ height: 'calc(100vh - 60px)', marginTop: '2rem' }}>
-                <div className="flex flex-col md:flex-row w-4/5 gap-4 ">
-                    <div className=" w-full md:w-2/5 lg:max-w-xs p-4 ">
-                        {isLoading && <p>Loading...</p>}
-                        <div className="mb-4 w-48 h-48 m-auto relative">
-                            <FaRegEdit
-                                size={20}
-                                style={{position:'absolute', right:0, top: 0, cursor:'pointer'}}
-                                onClick={editImage}
-                            />
-                            <input
-                                type='file' className='hidden'
-                                ref={fileInputRef}
-                                onChange={saveImg}
-                            />
+        <RootContainer>
+            <div className='w-full flex justify-center' style={{ height: 'calc(100vh - 60px)', marginTop: '2rem' }}>
+                    <div className="w-full flex flex-col md:flex-row gap-4 ">
+                        <div className=" w-full md:w-2/5 lg:max-w-xs p-4 ">
+                            {isLoading && <p>Loading...</p>}
+                            <div className="mb-4 w-48 h-48 m-auto relative">
+                                <FaRegEdit
+                                    size={20}
+                                    style={{position:'absolute', right:0, top: 0, cursor:'pointer'}}
+                                    onClick={editImage}
+                                />
+                                <input
+                                    type='file' className='hidden'
+                                    ref={fileInputRef}
+                                    onChange={saveImg}
+                                />
+                                {isSuccess ?
+                                    <img
+                                        src={userData.profileImg}
+                                        // alt="Profile"
+                                         className="rounded-full w-48 h-48 mx-auto"/>
+                                    :
+                                    <Skeleton variant="circular" width={'100%'} height={'100%'} animation="wave"/>
+                                }
+                            </div>
                             {isSuccess ?
-                                <img
-                                    src={userData.profileImg}
-                                    // alt="Profile"
-                                     className="rounded-full w-48 h-48 mx-auto"/>
+                                <>
+                                    <p className="text-center text-lg font-semibold mb-2">{userData?.name}</p>
+                                    <p className="text-center text-sm">{userData?.email}</p>
+                                    <p className="text-center text-sm">{userData?.sex}</p>
+                                    <p className="text-center text-sm">{calculateAge(userData?.birth)} 세</p>
+                                </>
                                 :
-                                <Skeleton variant="circular" width={'100%'} height={'100%'} animation="wave"/>
+                                <>
+                                    <Skeleton variant="text" sx={{fontSize: '1.3rem'}}/>
+                                    <Skeleton variant="text" sx={{fontSize: '1rem'}}/>
+                                    <Skeleton variant="text" sx={{fontSize: '1rem'}}/>
+                                    <Skeleton variant="text" sx={{fontSize: '1rem'}}/>
+                                </>
                             }
-                        </div>
-                        {isSuccess ?
-                            <>
-                                <p className="text-center text-lg font-semibold mb-2">{userData?.name}</p>
-                                <p className="text-center text-sm">{userData?.email}</p>
-                                <p className="text-center text-sm">{userData?.sex}</p>
-                                <p className="text-center text-sm">{calculateAge(userData?.birth)} 세</p>
-                            </>
-                            :
-                            <>
-                                <Skeleton variant="text" sx={{fontSize: '1.3rem'}}/>
-                                <Skeleton variant="text" sx={{fontSize: '1rem'}}/>
-                                <Skeleton variant="text" sx={{fontSize: '1rem'}}/>
-                                <Skeleton variant="text" sx={{fontSize: '1rem'}}/>
-                            </>
-                        }
-                        <div>
-                            <FacebookLoginbutton/>
-                        </div>
+                            <div>
+                                <FacebookLoginbutton/>
+                            </div>
 
+                        </div>
+                        <Outlet
+                            context={{
+                                userInfo: data?.data,
+                            }}
+                        />
                     </div>
-                    <Outlet
-                        context={{
-                            userInfo: data?.data,
-                        }}
-                    />
-                </div>
-        </div>
+            </div>
+        </RootContainer>
     );
 };
 

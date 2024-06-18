@@ -12,20 +12,22 @@ import {useRecoilState, useResetRecoilState} from 'recoil';
 import {useNavigate} from 'react-router-dom';
 import AccountMenu from '../@molecule/HeaderMenu';
 import Logo from '../../images/cellabor_logo.png';
-import { BsPersonCircle } from 'react-icons/bs';
+import {BsPersonCircle} from 'react-icons/bs';
 
 import {useResponsive} from '../../hooks/useResponsive';
+import RootContainer from '../@layouts/RootContainer';
 
 
 const HeaderNav = () => {
     const navigate = useNavigate();
     const [isLoggedIn, _] = useRecoilState(loginState);
-    const { isDesktop, isTablet, isMobile } = useResponsive();
+    const {isDesktop, isTablet, isMobile} = useResponsive();
 
 
     return (
         <>
-            <HeaderNavContainer>
+            {/*<HeaderNavContainer>*/}
+            <RootContainer>
                 <HeaderContentsArea>
                     <LogoArea>
                         <Link to={'/'}>
@@ -33,24 +35,25 @@ const HeaderNav = () => {
                         </Link>
                     </LogoArea>
                     <NavArea>
-                    {!isLoggedIn ?
-                        <>
-                        {isMobile ?
-                            <BsPersonCircle  size={25} onClick={() => navigate('/signin')} />
+                        {!isLoggedIn ?
+                            <>
+                                {isMobile ?
+                                    <BsPersonCircle size={25} onClick={() => navigate('/signin')}/>
+                                    :
+                                    <div className={'flex border-2 rounded-md px-3 py-1'}>
+                                        <Link to={'/signin'}>로그인 / 회원가입</Link>
+                                    </div>
+                                }
+                            </>
                             :
-                            <div className={'flex border-2 rounded-md px-3 py-1'}>
-                                <Link to={'/signin'}>로그인 / 회원가입</Link>
-                            </div>
+                            <>
+                                <AccountMenu/>
+                            </>
                         }
-                        </>
-                        :
-                        <>
-                        <AccountMenu />
-                        </>
-                    }
                     </NavArea>
                 </HeaderContentsArea>
-            </HeaderNavContainer>
+            </RootContainer>
+            {/*</HeaderNavContainer>*/}
             {/*<Outlet/>*/}
         </>
     );
@@ -64,27 +67,28 @@ const HeaderNavContainer = styled.div`
     display: flex;
     justify-content: center;
     background-color: darkgrey;
-    height: 60px;
-    
-    @media (max-width: 768px) { 
-    
+    height: 6vh;
+
+    @media (max-width: 768px) {
+
     }
 `;
 
 const HeaderContentsArea = styled.div`
-    width: 80%;
+    width: 100%;
+    height: 6vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 
-    @media (max-width: 768px) { 
-        
+    @media (max-width: 768px) {
+
     }
 `;
 
 const LogoArea = styled.div`
-    
+
 `;
 
 const NavArea = styled.div`

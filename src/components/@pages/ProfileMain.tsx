@@ -26,117 +26,118 @@ const ProfileMain = (props: Props) => {
                 <FaRegEdit size={20}/>
             </Link>
 
-            <div className="border shadow-sm rounded-lg">
-                <table>
-                    <thead>
-                    <tr>
-                        <th>Profile</th>
-                        <th>Followers</th>
-                        <th>Channels</th>
-                        <th>Gender</th>
-                        <th>Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>
-                            <div className="flex items-center gap-4">
-                                <Avatar className="h-10 w-10">
-                                    {/*<AvatarImage alt="@shadcn" src="/placeholder-avatar.jpg"/>*/}
-                                    {/*<AvatarFallback>JP</AvatarFallback>*/}
-                                </Avatar>
-                                <div>
-                                    <h3 className="font-medium">Jane Doe</h3>
-                                    <p className="text-sm text-gray-500 dark:text-gray-400">@janedoe</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div className="flex items-center gap-2">
-                                {/*<InstagramIcon className="h-5 w-5 text-gray-500 dark:text-gray-400"/>*/}
-                                <span className="text-sm font-medium">100K</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div className="flex items-center gap-2">
-                                {/*<InstagramIcon className="h-5 w-5 text-gray-500 dark:text-gray-400"/>*/}
-                                {/*<TwitterIcon className="h-5 w-5 text-gray-500 dark:text-gray-400"/>*/}
-                                {/*<YoutubeIcon className="h-5 w-5 text-gray-500 dark:text-gray-400"/>*/}
-                            </div>
-                        </td>
-                        <td>
-                            <span className="text-sm font-medium">Female</span>
-                        </td>
-                        <td>
-                            <button>Connect</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div className="flex items-center gap-4">
-                                <Avatar className="h-10 w-10">
-                                    {/*<AvatarImage alt="@shadcn" src="/placeholder-avatar.jpg"/>*/}
-                                    {/*<AvatarFallback>JD</AvatarFallback>*/}
-                                </Avatar>
-                                <div>
-                                    <h3 className="font-medium">John Doe</h3>
-                                    <p className="text-sm text-gray-500 dark:text-gray-400">@johndoe</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div className="flex items-center gap-2">
-                                {/*<TwitterIcon className="h-5 w-5 text-gray-500 dark:text-gray-400"/>*/}
-                                <span className="text-sm font-medium">50K</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div className="flex items-center gap-2">
-                                {/*<TwitterIcon className="h-5 w-5 text-gray-500 dark:text-gray-400"/>*/}
-                                {/*<YoutubeIcon className="h-5 w-5 text-gray-500 dark:text-gray-400"/>*/}
-                            </div>
-                        </td>
-                        <td>
-                            <span className="text-sm font-medium">Male</span>
-                        </td>
-                        <td>
-                            <button>Connect</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div className="flex items-center gap-4">
-                                <Avatar className="h-10 w-10">
-                                    {/*<AvatarImage alt="@shadcn" src="/placeholder-avatar.jpg"/>*/}
-                                    {/*<AvatarFallback>SM</AvatarFallback>*/}
-                                </Avatar>
-                                <div>
-                                    <h3 className="font-medium">Sarah Miller</h3>
-                                    <p className="text-sm text-gray-500 dark:text-gray-400">@sarahmiller</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div className="flex items-center gap-2">
-                                {/*<InstagramIcon className="h-5 w-5 text-gray-500 dark:text-gray-400"/>*/}
-                                <span className="text-sm font-medium">500K</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div className="flex items-center gap-2">
-                                {/*<InstagramIcon className="h-5 w-5 text-gray-500 dark:text-gray-400"/>*/}
-                            </div>
-                        </td>
-                        <td>
-                            <span className="text-sm font-medium">Female</span>
-                        </td>
-                        <td>
-                            <button>Connect</button>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+            {/*임시 주석 처리 추후 컨텐츠 채워서 활성화*/}
+            {/*<div className="border shadow-sm rounded-lg">*/}
+            {/*    <table>*/}
+            {/*        <thead>*/}
+            {/*            <tr>*/}
+            {/*                <th>Profile</th>*/}
+            {/*                <th>Followers</th>*/}
+            {/*                <th>Channels</th>*/}
+            {/*                <th>Gender</th>*/}
+            {/*                <th>Action</th>*/}
+            {/*            </tr>*/}
+            {/*        </thead>*/}
+            {/*        <tbody>*/}
+            {/*        <tr>*/}
+            {/*            <td>*/}
+            {/*                <div className="flex items-center gap-4">*/}
+            {/*                    <Avatar className="h-10 w-10">*/}
+            {/*                        /!*<AvatarImage alt="@shadcn" src="/placeholder-avatar.jpg"/>*!/*/}
+            {/*                        /!*<AvatarFallback>JP</AvatarFallback>*!/*/}
+            {/*                    </Avatar>*/}
+            {/*                    <div>*/}
+            {/*                        <h3 className="font-medium">Jane Doe</h3>*/}
+            {/*                        <p className="text-sm text-gray-500 dark:text-gray-400">@janedoe</p>*/}
+            {/*                    </div>*/}
+            {/*                </div>*/}
+            {/*            </td>*/}
+            {/*            <td>*/}
+            {/*                <div className="flex items-center gap-2">*/}
+            {/*                    /!*<InstagramIcon className="h-5 w-5 text-gray-500 dark:text-gray-400"/>*!/*/}
+            {/*                    <span className="text-sm font-medium">100K</span>*/}
+            {/*                </div>*/}
+            {/*            </td>*/}
+            {/*            <td>*/}
+            {/*                <div className="flex items-center gap-2">*/}
+            {/*                    /!*<InstagramIcon className="h-5 w-5 text-gray-500 dark:text-gray-400"/>*!/*/}
+            {/*                    /!*<TwitterIcon className="h-5 w-5 text-gray-500 dark:text-gray-400"/>*!/*/}
+            {/*                    /!*<YoutubeIcon className="h-5 w-5 text-gray-500 dark:text-gray-400"/>*!/*/}
+            {/*                </div>*/}
+            {/*            </td>*/}
+            {/*            <td>*/}
+            {/*                <span className="text-sm font-medium">Female</span>*/}
+            {/*            </td>*/}
+            {/*            <td>*/}
+            {/*                <button>Connect</button>*/}
+            {/*            </td>*/}
+            {/*        </tr>*/}
+            {/*        <tr>*/}
+            {/*            <td>*/}
+            {/*                <div className="flex items-center gap-4">*/}
+            {/*                    <Avatar className="h-10 w-10">*/}
+            {/*                        /!*<AvatarImage alt="@shadcn" src="/placeholder-avatar.jpg"/>*!/*/}
+            {/*                        /!*<AvatarFallback>JD</AvatarFallback>*!/*/}
+            {/*                    </Avatar>*/}
+            {/*                    <div>*/}
+            {/*                        <h3 className="font-medium">John Doe</h3>*/}
+            {/*                        <p className="text-sm text-gray-500 dark:text-gray-400">@johndoe</p>*/}
+            {/*                    </div>*/}
+            {/*                </div>*/}
+            {/*            </td>*/}
+            {/*            <td>*/}
+            {/*                <div className="flex items-center gap-2">*/}
+            {/*                    /!*<TwitterIcon className="h-5 w-5 text-gray-500 dark:text-gray-400"/>*!/*/}
+            {/*                    <span className="text-sm font-medium">50K</span>*/}
+            {/*                </div>*/}
+            {/*            </td>*/}
+            {/*            <td>*/}
+            {/*                <div className="flex items-center gap-2">*/}
+            {/*                    /!*<TwitterIcon className="h-5 w-5 text-gray-500 dark:text-gray-400"/>*!/*/}
+            {/*                    /!*<YoutubeIcon className="h-5 w-5 text-gray-500 dark:text-gray-400"/>*!/*/}
+            {/*                </div>*/}
+            {/*            </td>*/}
+            {/*            <td>*/}
+            {/*                <span className="text-sm font-medium">Male</span>*/}
+            {/*            </td>*/}
+            {/*            <td>*/}
+            {/*                <button>Connect</button>*/}
+            {/*            </td>*/}
+            {/*        </tr>*/}
+            {/*        <tr>*/}
+            {/*            <td>*/}
+            {/*                <div className="flex items-center gap-4">*/}
+            {/*                    <Avatar className="h-10 w-10">*/}
+            {/*                        /!*<AvatarImage alt="@shadcn" src="/placeholder-avatar.jpg"/>*!/*/}
+            {/*                        /!*<AvatarFallback>SM</AvatarFallback>*!/*/}
+            {/*                    </Avatar>*/}
+            {/*                    <div>*/}
+            {/*                        <h3 className="font-medium">Sarah Miller</h3>*/}
+            {/*                        <p className="text-sm text-gray-500 dark:text-gray-400">@sarahmiller</p>*/}
+            {/*                    </div>*/}
+            {/*                </div>*/}
+            {/*            </td>*/}
+            {/*            <td>*/}
+            {/*                <div className="flex items-center gap-2">*/}
+            {/*                    /!*<InstagramIcon className="h-5 w-5 text-gray-500 dark:text-gray-400"/>*!/*/}
+            {/*                    <span className="text-sm font-medium">500K</span>*/}
+            {/*                </div>*/}
+            {/*            </td>*/}
+            {/*            <td>*/}
+            {/*                <div className="flex items-center gap-2">*/}
+            {/*                    /!*<InstagramIcon className="h-5 w-5 text-gray-500 dark:text-gray-400"/>*!/*/}
+            {/*                </div>*/}
+            {/*            </td>*/}
+            {/*            <td>*/}
+            {/*                <span className="text-sm font-medium">Female</span>*/}
+            {/*            </td>*/}
+            {/*            <td>*/}
+            {/*                <button>Connect</button>*/}
+            {/*            </td>*/}
+            {/*        </tr>*/}
+            {/*        </tbody>*/}
+            {/*    </table>*/}
+            {/*</div>*/}
 
             <div className='mb-3'>
                 <h3 className="text-2xl font-bold mb-1">About</h3>

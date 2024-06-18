@@ -29,3 +29,14 @@ export const requestSignup = async (params: SignupParamsType) => {
     }
 };
 
+export const checkUser = async (email: string): Promise<any> => {
+    try {
+        const res = await noTokenInstance.post('/user/checkUser', { email });
+        console.log(res);
+        return res.data;
+    } catch (e) {
+        console.error(e);
+        throw e;
+    }
+};
+

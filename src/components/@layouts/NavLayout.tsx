@@ -12,7 +12,9 @@ const NavLayout = (props: Props) => {
     return (
         <>
             <HeaderNav />
-            <Outlet />
+            <div className={'min-h-[94dvh]'}>
+                <Outlet />
+            </div>
             <Footer />
         </>
 

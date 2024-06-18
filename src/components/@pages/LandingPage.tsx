@@ -7,6 +7,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import LandingItem from '../@organism/LandingItem';
 import {landingData} from '../../mockups/landingData';
+import RootContainer from '../@layouts/RootContainer';
 
 export default function LandingPage() {
 
@@ -16,12 +17,15 @@ export default function LandingPage() {
         <div className="flex min-h-[100dvh]">
             <main className="flex-1">
                 {landingData.map((item) => (
-                    <LandingItem
-                        key={item.id}
-                        title={item.title}
-                        description={item.description}
-                        image={item.image}
-                    />
+                    <RootContainer>
+
+                        <LandingItem
+                            key={item.id}
+                            title={item.title}
+                            description={item.description}
+                            image={item.image}
+                        />
+                    </RootContainer>
                 ))}
                 {/*<section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">*/}
                 {/*    <div className="px-4 md:px-6 w-full">*/}
@@ -232,42 +236,42 @@ export default function LandingPage() {
                 {/*        </div>*/}
                 {/*    </div>*/}
                 {/*</section>*/}
-                <section className="w-full py-12 md:py-24 lg:py-32 border-t">
-                    <div className=" px-4 md:px-6">
-                        <div className="grid gap-10 px-10 md:gap-16 lg:grid-cols-2">
-                            <div className="space-y-4">
-                                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                                    Testimonials
-                                </div>
-                                <h2 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
-                                    What Our Clients Say
-                                </h2>
-                                <blockquote className="text-lg font-semibold leading-snug lg:text-xl lg:leading-normal xl:text-2xl">
-                                    “The Influencer Platform has been a game-changer for our brand. The insights and campaign management
-                                    tools have helped us achieve incredible results.“
-                                </blockquote>
-                                <div>
-                                    <div className="font-semibold">Sarah Johnson</div>
-                                    <div className="text-sm text-gray-500 dark:text-gray-400">Marketing Manager, Acme Co.</div>
-                                </div>
-                            </div>
-                            <div className="flex flex-col items-start space-y-4">
-                                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                                    Get Started
-                                </div>
-                                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed dark:text-gray-400">
-                                    Ready to take your influencer marketing to the next level? Sign up for a free trial and see the
-                                    difference our platform can make.
-                                </p>
-                                <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                                    <Link to={'/'}>
-                                        Sign Up
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                {/*<section className="w-full py-12 md:py-24 lg:py-32 border-t">*/}
+                {/*    <div className=" px-4 md:px-6">*/}
+                {/*        <div className="grid gap-10 px-10 md:gap-16 lg:grid-cols-2">*/}
+                {/*            <div className="space-y-4">*/}
+                {/*                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">*/}
+                {/*                    Testimonials*/}
+                {/*                </div>*/}
+                {/*                <h2 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">*/}
+                {/*                    What Our Clients Say*/}
+                {/*                </h2>*/}
+                {/*                <blockquote className="text-lg font-semibold leading-snug lg:text-xl lg:leading-normal xl:text-2xl">*/}
+                {/*                    “The Influencer Platform has been a game-changer for our brand. The insights and campaign management*/}
+                {/*                    tools have helped us achieve incredible results.“*/}
+                {/*                </blockquote>*/}
+                {/*                <div>*/}
+                {/*                    <div className="font-semibold">Sarah Johnson</div>*/}
+                {/*                    <div className="text-sm text-gray-500 dark:text-gray-400">Marketing Manager, Acme Co.</div>*/}
+                {/*                </div>*/}
+                {/*            </div>*/}
+                {/*            <div className="flex flex-col items-start space-y-4">*/}
+                {/*                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">*/}
+                {/*                    Get Started*/}
+                {/*                </div>*/}
+                {/*                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed dark:text-gray-400">*/}
+                {/*                    Ready to take your influencer marketing to the next level? Sign up for a free trial and see the*/}
+                {/*                    difference our platform can make.*/}
+                {/*                </p>*/}
+                {/*                <div className="flex flex-col gap-2 min-[400px]:flex-row">*/}
+                {/*                    <Link to={'/'}>*/}
+                {/*                        Sign Up*/}
+                {/*                    </Link>*/}
+                {/*                </div>*/}
+                {/*            </div>*/}
+                {/*        </div>*/}
+                {/*    </div>*/}
+                {/*</section>*/}
             </main>
         </div>
     );

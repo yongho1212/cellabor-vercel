@@ -21,6 +21,7 @@ export default function CardInfluencer({index, uid, profileImg, name, descriptio
 
     const cardRef = useRef<HTMLDivElement>(null);
 
+
     useEffect(() => {
         if (cardRef.current) {
             setCardWidth(cardRef.current.offsetWidth);

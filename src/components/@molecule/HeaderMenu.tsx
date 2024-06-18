@@ -23,17 +23,17 @@ export default function AccountMenu() {
     };
     return (
         <React.Fragment>
-            <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
+            <Box sx={{display: 'flex', alignItems: 'center', textAlign: 'center'}}>
                 <Tooltip title="Account settings">
                     <IconButton
                         onClick={handleClick}
                         size="small"
-                        sx={{ ml: 2 }}
+                        sx={{ml: 2}}
                         aria-controls={open ? 'account-menu' : undefined}
                         aria-haspopup="true"
                         aria-expanded={open ? 'true' : undefined}
                     >
-                        <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+                        <Avatar sx={{width: 32, height: 32}}>M</Avatar>
                     </IconButton>
                 </Tooltip>
             </Box>
@@ -69,31 +69,35 @@ export default function AccountMenu() {
                         },
                     },
                 }}
-                transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-                anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+                transformOrigin={{horizontal: 'right', vertical: 'top'}}
+                anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
             >
-                <MenuItem >
-                    <Avatar />
-                    {/*Profile*/}
-                    <Link to={'/profile'}>Profile</Link>
-                </MenuItem>
-                <Divider />
-                <MenuItem >
-                    <Avatar />
-                    {/*Profile*/}
-                    <Link to={'/search-influencer'}>Search</Link>
-                </MenuItem>
-                <Divider />
+                <Link to={'/profile'}>
+                    <MenuItem>
+                        <Avatar/>
+                        {/*Profile*/}
+                        Profile
+                    </MenuItem>
+                </Link>
+                <Divider/>
+                <Link to={'/search-influencer'}>
+                    <MenuItem>
+                        <Avatar/>
+                        {/*Profile*/}
+                        Search
+                    </MenuItem>
+                </Link>
+                <Divider/>
                 {/*<MenuItem onClick={handleClose}>*/}
                 {/*    <ListItemIcon>*/}
                 {/*        /!*<Settings fontSize="small" />*!/*/}
                 {/*    </ListItemIcon>*/}
                 {/*    Settings*/}
                 {/*</MenuItem>*/}
-                <MenuItem >
+                <MenuItem>
                     <ListItemIcon>
                         {/*<Logout fontSize="small" />*/}
-                        <SignOut />
+                        <SignOut/>
                     </ListItemIcon>
                 </MenuItem>
             </Menu>

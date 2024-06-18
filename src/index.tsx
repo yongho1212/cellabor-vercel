@@ -32,7 +32,7 @@ import NavLayout from './components/@layouts/NavLayout';
 import PostCampaignPage from './components/@pages/PostCampaignPage';
 import CampainListPage from './components/@pages/CampainListPage';
 import CampainDetailPage from './components/@pages/CampainDetailPage';
-import AdWorkSpacePage from './components/@pages/AdWorkSpacePage';
+import SearchCampaignPage from './components/@pages/SearchCampaignPage';
 import AdCampaignGeneralDataPage from './components/@pages/AdCampaignGeneralDataPage';
 import AdCampaignDetailInfoPage from './components/@pages/AdCampaignDetailInfoPage';
 import CampaingLayout from './components/@pages/CampaingLayout';
@@ -110,24 +110,11 @@ const router = createBrowserRouter([
                         path: '/campainList',
                         element: <CampainListPage/>,
                     },
-                    {
-                        path: '/campainDetail',
-                        element: <CampainDetailPage/>,
-                    },
-                    {
-                        path: '/workspace',
-                        element: <AdWorkSpacePage/>,
-                        // children: [
-                        //     {
-                        //         path: '/workspace',
-                        //         element: <AdCampaignGeneralDataPage/>,
-                        //     },
-                        //     {
-                        //         path: '/workspace/detail/:id',
-                        //         element: <AdCampaignDetailInfoPage/>,
-                        //     }
-                        // ]
-                    },
+                    // {
+                    //     path: '/campainDetail',
+                    //     element: <CampainDetailPage/>,
+                    // },
+
                     {
                         path: '/ad/campaign/:id',
                         element: <CampaingLayout/>,
@@ -189,7 +176,11 @@ const router = createBrowserRouter([
             {
                 path: '/search-influencer',
                 element: <SearchInfluencerPage/>,
-            }
+            },
+            {
+                path: '/search-campaign',
+                element: <SearchCampaignPage/>,
+            },
         ],
     },
     {
