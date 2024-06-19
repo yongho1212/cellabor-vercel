@@ -8,9 +8,6 @@ import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs';
 import 'dayjs/locale/zh-cn';
 import {RecoilRoot} from 'recoil';
 import {
-    useQuery,
-    useMutation,
-    useQueryClient,
     QueryClient,
     QueryClientProvider,
 } from '@tanstack/react-query';
@@ -19,19 +16,17 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 import {ThemeProvider} from 'styled-components';
 import {theme} from './styles/theme/theme';
-// import GlobalStyle from './styles/GlobalStyle';
 import {NavermapsProvider} from 'react-naver-maps';
 import ErrorPage from './components/@pages/ErrorPage';
-import Home from './components/@pages/Home';
+
 import LandingPage from './components/@pages/LandingPage';
 import SignInPage from './components/@pages/SignInPage';
 import SignUpPage from './components/@pages/SignUpPage';
-import LoginPage from './components/@pages/LoginPage';
-import HeaderNav from './components/@organism/HeaderNav';
+
 import NavLayout from './components/@layouts/NavLayout';
 import PostCampaignPage from './components/@pages/PostCampaignPage';
-import CampainListPage from './components/@pages/CampainListPage';
-import CampainDetailPage from './components/@pages/CampainDetailPage';
+
+
 import SearchCampaignPage from './components/@pages/SearchCampaignPage';
 import AdCampaignGeneralDataPage from './components/@pages/AdCampaignGeneralDataPage';
 import AdCampaignDetailInfoPage from './components/@pages/AdCampaignDetailInfoPage';
@@ -49,8 +44,6 @@ import Workspace from './components/@pages/Workspace';
 import SearchInfluencerPage from './components/@pages/SearchInfluencerPage';
 
 import ProtectedRoute from './ProtectedRoute';
-import NewProfileRoute from './NewProfileRoute';
-import {getUserInfo} from './apis/user/getProfile';
 import GlobalStyle from './styles/GlobalStyle';
 
 
@@ -59,21 +52,6 @@ const root = ReactDOM.createRoot(
 );
 
 const queryClient = new QueryClient();
-
-const getLogin = () => {
-    const isLoggedInLocal = localStorage.getItem('isLoggedIn');
-    return JSON.parse(isLoggedInLocal!);
-};
-const getProfile = () => {
-    const isProfileMadeLocal = localStorage.getItem('isProfileMade');
-    return JSON.parse(isProfileMadeLocal!);
-};
-
-const isAuthenticated = () => {
-    const login = getLogin();
-    const profile = getProfile();
-    return {login, profile};
-};
 
 
 const router = createBrowserRouter([
@@ -95,10 +73,7 @@ const router = createBrowserRouter([
                 path: '/signup',
                 element: <SignUpPage/>,
             },
-            {
-                path: '/login',
-                element: <LoginPage/>,
-            },
+
             {
                 path: '/new-profile',
                 element: <NewProfile/>
@@ -108,15 +83,6 @@ const router = createBrowserRouter([
                 element: <ProtectedRoute />,
                 path: '',
                 children: [
-                    {
-                        path: '/campainList',
-                        element: <CampainListPage/>,
-                    },
-                    // {
-                    //     path: '/campainDetail',
-                    //     element: <CampainDetailPage/>,
-                    // },
-
                     {
                         path: '/ad/campaign/:id',
                         element: <CampaingLayout/>,

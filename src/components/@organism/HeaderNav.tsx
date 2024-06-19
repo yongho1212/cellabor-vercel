@@ -23,7 +23,6 @@ const HeaderNav = () => {
     const [isLoggedIn, _] = useRecoilState(loginState);
     const {isDesktop, isTablet, isMobile} = useResponsive();
 
-
     return (
         <>
             {/*<HeaderNavContainer>*/}

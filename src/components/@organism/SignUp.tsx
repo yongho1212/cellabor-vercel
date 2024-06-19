@@ -11,7 +11,7 @@ import {Button, Text, Spacer, Line} from '../@atoms';
 
 import {LoginParamsType, SignupParamsType} from '../../types/auth.types';
 import {SIGNUP_TERMS} from '../../constants/signupTerms';
-import {LoginContext} from './Login';
+
 
 import {requestSignup} from '../../apis/auth';
 
