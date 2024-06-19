@@ -83,7 +83,7 @@ const HeaderContentsArea = styled.div`
     align-items: center;
 
     @media (max-width: 768px) {
-
+        padding: 1rem;
     }
 `;
 

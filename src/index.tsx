@@ -44,6 +44,8 @@ import NewProfile from './components/@pages/NewUserPage';
 import ProfileMain from './components/@pages/ProfileMain';
 import EditProfilePage from './components/@pages/ProfileEditPage';
 
+import Workspace from './components/@pages/Workspace';
+
 import SearchInfluencerPage from './components/@pages/SearchInfluencerPage';
 
 import ProtectedRoute from './ProtectedRoute';
@@ -180,6 +182,10 @@ const router = createBrowserRouter([
             {
                 path: '/search-campaign',
                 element: <SearchCampaignPage/>,
+            },
+            {
+                path: '/workspace',
+                element: <Workspace />,
             },
         ],
     },
